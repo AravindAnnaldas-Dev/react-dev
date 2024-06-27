@@ -1,0 +1,109 @@
+:root {
+  --section-padding-block: 5rem;
+  --container-padding-inline: 1rem;
+  --container-max-width: 1200px;
+  --basic-font-size: 1rem;
+  --basic-line-height: 1.2;
+  --basic-letter-spacing: 0.02rem;
+  --basic-font-weight: 400;
+  --font-family: "Poppins", sans-serif;
+  --primary-btn-background-clr: hsl(210, 100%, 45%);
+  --primary-btn-clr: #ffffff;
+  --primary-btn-box-shadow: hsl(210, 100%, 60%) 0 2px 0 inset,
+    hsl(210, 100%, 38%) 0 -2px 0 inset, hsla(200, 10%, 4%, 0.1) 0 2px 4px 0;
+  --primary-btn-padding: 8px 32px;
+  --primary-btn-border-radius: 8px;
+  --primary-btn-border-top-clr: #3399ff;
+  --primary-btn-text-shadow: 0 1px 1px hsla(200, 10%, 4%, 0.6);
+  --primary-btn-background-image: linear-gradient(
+    180deg,
+    hsla(210, 100%, 45%, 0.6) 0%,
+    hsl(210, 100%, 42%) 100%
+  );
+}
+
+/* For light */
+[data-ui-color-scheme="light"] {
+  --background: #ffffff;
+  --title-clr: #0f1214;
+  --sub-title-clr: #474d56;
+}
+
+/* For Dark */
+[data-ui-color-scheme="dark"] {
+  --background: #0f1214;
+  --title-clr: #fefefe;
+  --sub-title-clr: #b5bdc8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  font-weight: var(--basic-font-weight);
+  font-size: var(--basic-font-size);
+  font-family: var(--font-family);
+  line-height: var(--basic-line-height);
+  letter-spacing: var(--basic-letter-spacing);
+  background: var(--background);
+}
+
+.b-section {
+  padding-block: var(--section-padding-block);
+}
+
+.b-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding-inline: var(--container-padding-inline);
+  margin-inline: auto;
+}
+
+.b-title {
+  color: var(--title-clr);
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.b-sub-title-ctn {
+  width: 100%;
+  max-width: 640px;
+  padding-top: 2.5rem;
+}
+
+.b-sub-title {
+  color: var(--sub-title-clr);
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.b-primary-btn-ctn {
+  margin-top: 2rem;
+}
+
+.b-primary-btn {
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+  padding: var(--primary-btn-padding);
+  border-radius: var(--primary-btn-border-radius);
+  background-color: var(--primary-btn-background-clr);
+  background-image: var(--primary-btn-background-image);
+  color: var(--primary-btn-clr);
+  box-shadow: var(--primary-btn-box-shadow);
+  text-shadow: var(--primary-btn-text-shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.b-primary-btn:hover {
+  box-shadow: none;
+}

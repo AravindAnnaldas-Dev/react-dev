@@ -1,24 +1,39 @@
-import React, { useState } from 'react';
-import './App.css';
-import { FaWhatsappSquare } from 'react-icons/fa';
+import React from "react";
+import "./styles/App.css";
 
 const App = () => {
-  const [count, setCount] = useState(null);
-
-  const onIncreaseCount = () => {
-    setCount(count + 1);
+  const onClickPrimaryBtn = () => {
+    const htmlTag = document.querySelector("html");
+    const attrValue = htmlTag.getAttribute("data-ui-color-scheme");
+    if (attrValue === "light") {
+      htmlTag.setAttribute("data-ui-color-scheme", "dark");
+    } else {
+      htmlTag.setAttribute("data-ui-color-scheme", "light");
+    }
   };
+
   return (
-    <div className="rp-section">
-      <div className="rp-container">
-        <div className="rp-wrapper">
-          <div className="notification-icon">
-            <FaWhatsappSquare />
-            {count > 0 && <div className="badge-ctn">{count}</div>}
+    <div className="b-section">
+      <div className="b-container">
+        <div className="b-wrapper">
+          <h2 className="b-title">Switch to change the color-scheme</h2>
+          <div className="b-sub-title-ctn">
+            <p className="b-sub-title">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Consectetur inventore deserunt, quos nostrum amet hic incidunt
+              praesentium adipisci vitae tenetur exercitationem quae quia. Odit
+              mollitia non, repellat quidem voluptas voluptate?
+            </p>
           </div>
-          <button className="badge-count-btn" onClick={onIncreaseCount}>
-            Click to increase the count
-          </button>
+          <div className="b-primary-btn-ctn">
+            <button
+              title="Click to change theme"
+              className="b-primary-btn"
+              onClick={onClickPrimaryBtn}
+            >
+              Click to change theme
+            </button>
+          </div>
         </div>
       </div>
     </div>
