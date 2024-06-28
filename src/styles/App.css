@@ -27,6 +27,7 @@
   --background: #ffffff;
   --title-clr: #0f1214;
   --sub-title-clr: #474d56;
+  --color-scheme: light;
 }
 
 /* For Dark */
@@ -34,12 +35,17 @@
   --background: #0f1214;
   --title-clr: #fefefe;
   --sub-title-clr: #b5bdc8;
+  --color-scheme: dark;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html{
+  color-scheme: var(--color-scheme);
 }
 
 body {
