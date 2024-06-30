@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "color-scheme",
+          "padding-block",
+          "padding-inline",
+          "margin-inline",
+          "text-underline-offset"
+        ]
+      }
+    ]
+  }
+}

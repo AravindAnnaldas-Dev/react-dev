@@ -1,14 +1,16 @@
-import React from "react";
-import "./styles/App.css";
+import React from 'react';
+import './styles/App.css';
+import { LuSettings } from 'react-icons/lu';
+import { MdAdsClick } from 'react-icons/md';
 
 const App = () => {
   const onClickPrimaryBtn = () => {
-    const htmlTag = document.querySelector("html");
-    const attrValue = htmlTag.getAttribute("data-ui-color-scheme");
-    if (attrValue === "light") {
-      htmlTag.setAttribute("data-ui-color-scheme", "dark");
+    const htmlTag = document.querySelector('html');
+    const attrValue = htmlTag.getAttribute('data-ui-color-scheme');
+    if (attrValue === 'light') {
+      htmlTag.setAttribute('data-ui-color-scheme', 'dark');
     } else {
-      htmlTag.setAttribute("data-ui-color-scheme", "light");
+      htmlTag.setAttribute('data-ui-color-scheme', 'light');
     }
   };
 
@@ -32,6 +34,19 @@ const App = () => {
               onClick={onClickPrimaryBtn}
             >
               Click to change theme
+            </button>
+          </div>
+        </div>
+        <div className="b-wrapper mt-40">
+          <h2 className="b-title">Button on hover</h2>
+          <div className="b-btn-test-ctn">
+            <button className="b-btn-test">
+              <LuSettings />
+            </button>
+          </div>
+          <div className="b-btn-test-ctn">
+            <button className="b-btn-test text">
+              <MdAdsClick />
             </button>
           </div>
         </div>

@@ -6,7 +6,7 @@
   --basic-line-height: 1.2;
   --basic-letter-spacing: 0.02rem;
   --basic-font-weight: 400;
-  --font-family: "Poppins", sans-serif;
+  --font-family: 'Poppins', sans-serif;
   --primary-btn-background-clr: hsl(210, 100%, 45%);
   --primary-btn-clr: #ffffff;
   --primary-btn-box-shadow: hsl(210, 100%, 60%) 0 2px 0 inset,
@@ -23,7 +23,7 @@
 }
 
 /* For light */
-[data-ui-color-scheme="light"] {
+[data-ui-color-scheme='light'] {
   --background: #ffffff;
   --title-clr: #0f1214;
   --sub-title-clr: #474d56;
@@ -31,7 +31,7 @@
 }
 
 /* For Dark */
-[data-ui-color-scheme="dark"] {
+[data-ui-color-scheme='dark'] {
   --background: #0f1214;
   --title-clr: #fefefe;
   --sub-title-clr: #b5bdc8;
@@ -44,12 +44,12 @@
   padding: 0;
 }
 
-html{
+html {
   color-scheme: var(--color-scheme);
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   min-height: 100vh;
   font-weight: var(--basic-font-weight);
   font-size: var(--basic-font-size);
@@ -112,4 +112,78 @@ body {
 
 .b-primary-btn:hover {
   box-shadow: none;
+}
+
+.b-wrapper.mt-40 {
+  margin-top: 2.5rem;
+}
+
+.b-btn-test-ctn {
+  margin-top: 5rem;
+  display: inline-block;
+}
+
+.b-btn-test {
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-left: 2rem;
+  border-radius: var(--primary-btn-border-radius);
+  background-color: var(--primary-btn-background-clr);
+  color: var(--primary-btn-clr);
+  box-shadow: var(--primary-btn-box-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.b-btn-test::before {
+  content: 'Settings';
+  height: 60%;
+  text-wrap: nowrap;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-shadow: var(--primary-btn-text-shadow);
+  background: hsl(210, 96%, 55%);
+  padding: 4px 12px;
+  border-radius: 4px;
+  transition: all 0.2s linear;
+}
+
+.b-btn-test::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  background: hsl(210, 96%, 55%);
+  top: -43px;
+  left: 0;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  transform: scale(0.2);
+}
+
+.b-btn-test.text::before {
+  content: 'Just hover it!';
+}
+
+.b-btn-test:hover::before {
+  display: flex;
+}
+
+.b-btn-test:hover::after {
+  display: block;
 }
